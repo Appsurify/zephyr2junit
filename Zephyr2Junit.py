@@ -71,7 +71,7 @@ testsuite.set('tests', str(numPass+numFail+numSkip+numError))
 testsuite.set('errors', str(numError))
 testsuite.set('failures', str(numFail))
 testsuite.set('skipped', str(numSkip))
-testsuite.set('name', testsuitename)
+testsuite.set('name', str(testsuitename))
 
 for testresult in testresults:
     test = ET.SubElement(testsuite, 'testcase')
@@ -80,15 +80,15 @@ for testresult in testresults:
         result = ET.SubElement(test, 'skipped')
     if testresult.result == "failure":
         result = ET.SubElement(test, 'failure')
-        result.set('message', testresult.comment)
-        result.set('type', testresult.comment)
-        result.text = testresult.comment
+        result.set('message', str(testresult.comment))
+        result.set('type', str(testresult.comment))
+        result.text = str(testresult.comment)
 
     if testresult.result == "error":
         result = ET.SubElement(test, 'error')
-        result.set('message', testresult.comment)
-        result.set('type', testresult.comment)
-        result.text = testresult.comment
+        result.set('message', str(testresult.comment))
+        result.set('type', str(testresult.comment))
+        result.text = str(testresult.comment)
 
 # create a new XML file with the results
 mydata = ET.tostring(testsuites)
