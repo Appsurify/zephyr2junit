@@ -16,7 +16,7 @@ errorValue = ""
 
 class TestResult:
     def __init__(self, name, issueKey, result, comment):
-        self.name = name
+        self.name = issueKey + " " + name
         self.issueKey = issueKey
         self.result = result
 
