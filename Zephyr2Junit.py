@@ -58,9 +58,9 @@ for elem in root:
         numError = numError + 1
     if result == "failure":
         numFail = numFail + 1
-    print(result)
-    print(issueKey)
-    print(testSummary)
+    #print(result)
+    #print(issueKey)
+    #print(testSummary)
     test = TestResult(testSummary, issueKey, result, comment)
     testresults.append(test)
     
@@ -92,5 +92,5 @@ for testresult in testresults:
 
 # create a new XML file with the results
 mydata = ET.tostring(testsuites)
-myfile = open("junit.xml", "w")
+myfile = open("junit.xml", "wb")
 myfile.write(mydata)
